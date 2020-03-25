@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<results>
+  <delays>
+    <flow name="AFDX Flow 3">
+      <target name="A" value="271" />
+      <target name="B" value="271" />
+    </flow>
+    <flow name="AFDX Flow 1">
+      <target name="C" value="271" />
+      <target name="B" value="271" />
+    </flow>
+    <flow name="AFDX Flow 2">
+      <target name="C" value="271" />
+      <target name="A" value="271" />
+    </flow>
+  </delays>
+  <jitters>
+    <flow name="AFDX Flow 3">
+      <target name="A" value="0" />
+      <target name="B" value="0" />
+    </flow>
+    <flow name="AFDX Flow 1">
+      <target name="C" value="0" />
+      <target name="B" value="0" />
+    </flow>
+    <flow name="AFDX Flow 2">
+      <target name="C" value="0" />
+      <target name="A" value="0" />
+    </flow>
+  </jitters>
+  <backlogs>
+    <switch name="AFDX Switch 1">
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <total backlog="0" buffer="0" percent="0" />
+    </switch>
+  </backlogs>
+  <load>
+    <edge name="AFDX Edge 2">
+      <usage percent="8.5%" type="direct" value="8.5360e+06" />
+      <usage percent="17.1%" type="reverse" value="1.7072e+07" />
+    </edge>
+    <edge name="AFDX Edge 1">
+      <usage percent="8.5%" type="direct" value="8.5360e+06" />
+      <usage percent="17.1%" type="reverse" value="1.7072e+07" />
+    </edge>
+    <edge name="AFDX Edge 3">
+      <usage percent="8.5%" type="direct" value="8.5360e+06" />
+      <usage percent="17.1%" type="reverse" value="1.7072e+07" />
+    </edge>
+  </load>
+</results>

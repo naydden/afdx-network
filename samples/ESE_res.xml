@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results>
+   <delays>
+      <flow name="AFDX Flow 1">
+         <target name="AFDX Station 6" value="179.0"/>
+      </flow>
+   </delays>
+   <jitters>
+      <flow name="AFDX Flow 1">
+         <target name="AFDX Station 6" value="94.0"/>
+      </flow>
+   </jitters>
+   <backlogs>
+      <switch name="AFDX Switch 1">
+         <port backlog="1159.0" delay="92.646" num="1"/>
+         <total backlog="1159.0" buffer="65536.0" percent="1.8%"/>
+      </switch>
+   </backlogs>
+   <load>
+      <edge name="AFDX Edge 3">
+         <usage percent="8.5%" type="direct" value="8536000.0"/>
+         <usage percent="0.0%" type="reverse" value="0.0"/>
+      </edge>
+      <edge name="AFDX Edge 4">
+         <usage percent="8.5%" type="direct" value="8536000.0"/>
+         <usage percent="0.0%" type="reverse" value="0.0"/>
+      </edge>
+   </load>
+</results>

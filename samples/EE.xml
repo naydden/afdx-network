@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+   <network name="EE" overhead="67" shortest-path-policy="DIJKSTRA" technology="AFDX" transmission-capacity="100Mbps" x-type="FULL"/>
+   <station name="AFDX Station 1" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="92.0" y="55.0"/>
+   <station name="AFDX Station 2" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="242.0" y="56.0"/>
+   <link from="AFDX Station 1" fromPort="0" name="AFDX Edge 1" to="AFDX Station 2" toPort="0" transmission-capacity="100Mbps"/>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="AFDX Flow 1" period="1" priority="Low" source="AFDX Station 1">
+      <target name="AFDX Station 2">
+         <path node="AFDX Station 2"/>
+      </target>
+   </flow>
+</elements>

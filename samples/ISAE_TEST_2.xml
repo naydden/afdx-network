@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+   <network name="ISAE_TEST_2" overhead="67" shortest-path-policy="DIJKSTRA" technology="AFDX" transmission-capacity="100Mbps" x-type="FULL"/>
+   <station name="ES#SW1.0" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="264.0" y="193.0"/>
+   <station name="ES#SW1.1" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="188.0" y="269.0"/>
+   <station name="ES#SW1.2" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="53.0" y="225.0"/>
+   <station name="ES#SW1.3" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="53.0" y="84.0"/>
+   <station name="ES#SW1.4" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="204.0" y="46.0"/>
+   <station name="ES#SW2.0" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="641.0" y="154.0"/>
+   <station name="ES#SW2.1" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="558.0" y="268.0"/>
+   <station name="ES#SW2.2" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="423.0" y="224.0"/>
+   <station name="ES#SW2.3" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="423.0" y="83.0"/>
+   <station name="ES#SW2.4" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="558.0" y="39.0"/>
+   <switch name="SW1" service-policy="FIRST_IN_FIRST_OUT" switching-technique="CUT_THROUGH" tech-latency="0" transmission-capacity="100Mbps" x="144.0" y="144.0"/>
+   <switch name="SW2" service-policy="FIRST_IN_FIRST_OUT" switching-technique="CUT_THROUGH" tech-latency="0" transmission-capacity="100Mbps" x="528.0" y="144.0"/>
+   <link from="ES#SW1.0" fromPort="0" name="Edge1" to="SW1" toPort="0" transmission-capacity="100Mbps"/>
+   <link from="ES#SW2.4" fromPort="0" name="Edge10" to="SW2" toPort="4" transmission-capacity="100Mbps"/>
+   <link from="SW1" fromPort="5" name="Edge11" to="SW2" toPort="5" transmission-capacity="100Mbps"/>
+   <link from="ES#SW1.1" fromPort="0" name="Edge2" to="SW1" toPort="1" transmission-capacity="100Mbps"/>
+   <link from="ES#SW1.2" fromPort="0" name="Edge3" to="SW1" toPort="2" transmission-capacity="100Mbps"/>
+   <link from="ES#SW1.3" fromPort="0" name="Edge4" to="SW1" toPort="3" transmission-capacity="100Mbps"/>
+   <link from="ES#SW1.4" fromPort="0" name="Edge5" to="SW1" toPort="4" transmission-capacity="100Mbps"/>
+   <link from="ES#SW2.0" fromPort="0" name="Edge6" to="SW2" toPort="0" transmission-capacity="100Mbps"/>
+   <link from="ES#SW2.1" fromPort="0" name="Edge7" to="SW2" toPort="1" transmission-capacity="100Mbps"/>
+   <link from="ES#SW2.2" fromPort="0" name="Edge8" to="SW2" toPort="2" transmission-capacity="100Mbps"/>
+   <link from="ES#SW2.3" fromPort="0" name="Edge9" to="SW2" toPort="3" transmission-capacity="100Mbps"/>
+   <flow deadline="2" jitter="0" max-payload="1000" min-payload="1000" name="Flow1" period="1" priority="Low" source="ES#SW1.0">
+      <target name="ES#SW2.0">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.0"/>
+      </target>
+      <target name="ES#SW2.1">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.1"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+   <flow deadline="2" jitter="0" max-payload="1050" min-payload="1050" name="Flow2" period="1" priority="Low" source="ES#SW1.1">
+      <target name="ES#SW2.0">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.0"/>
+      </target>
+      <target name="ES#SW2.1">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.1"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+   <flow deadline="2" jitter="0" max-payload="1100" min-payload="1100" name="Flow3" period="1" priority="Low" source="ES#SW1.2">
+      <target name="ES#SW2.0">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.0"/>
+      </target>
+      <target name="ES#SW2.1">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.1"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+   <flow deadline="2" jitter="0" max-payload="1200" min-payload="1200" name="Flow4" period="1" priority="Low" source="ES#SW1.3">
+      <target name="ES#SW2.0">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.0"/>
+      </target>
+      <target name="ES#SW2.1">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.1"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+   <flow deadline="2" jitter="0" max-payload="1250" min-payload="1250" name="Flow5" period="1" priority="Low" source="ES#SW1.4">
+      <target name="ES#SW2.0">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.0"/>
+      </target>
+      <target name="ES#SW2.1">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.1"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="Flow6" period="1" priority="Low" source="ES#SW1.0">
+      <target name="ES#SW1.1">
+         <path node="SW1"/>
+         <path node="ES#SW1.1"/>
+      </target>
+      <target name="ES#SW1.2">
+         <path node="SW1"/>
+         <path node="ES#SW1.2"/>
+      </target>
+      <target name="ES#SW1.3">
+         <path node="SW1"/>
+         <path node="ES#SW1.3"/>
+      </target>
+      <target name="ES#SW1.4">
+         <path node="SW1"/>
+         <path node="ES#SW1.4"/>
+      </target>
+      <target name="ES#SW2.0">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.0"/>
+      </target>
+      <target name="ES#SW2.1">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.1"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="Flow7" period="1" priority="Low" source="ES#SW1.1">
+      <target name="ES#SW1.0">
+         <path node="SW1"/>
+         <path node="ES#SW1.0"/>
+      </target>
+      <target name="ES#SW1.2">
+         <path node="SW1"/>
+         <path node="ES#SW1.2"/>
+      </target>
+      <target name="ES#SW1.3">
+         <path node="SW1"/>
+         <path node="ES#SW1.3"/>
+      </target>
+      <target name="ES#SW1.4">
+         <path node="SW1"/>
+         <path node="ES#SW1.4"/>
+      </target>
+      <target name="ES#SW2.0">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.0"/>
+      </target>
+      <target name="ES#SW2.1">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.1"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="Flow8" period="1" priority="Low" source="ES#SW1.2">
+      <target name="ES#SW1.0">
+         <path node="SW1"/>
+         <path node="ES#SW1.0"/>
+      </target>
+      <target name="ES#SW1.1">
+         <path node="SW1"/>
+         <path node="ES#SW1.1"/>
+      </target>
+      <target name="ES#SW1.3">
+         <path node="SW1"/>
+         <path node="ES#SW1.3"/>
+      </target>
+      <target name="ES#SW1.4">
+         <path node="SW1"/>
+         <path node="ES#SW1.4"/>
+      </target>
+      <target name="ES#SW2.0">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.0"/>
+      </target>
+      <target name="ES#SW2.1">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.1"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="Flow9" period="1" priority="Low" source="ES#SW1.3">
+      <target name="ES#SW1.0">
+         <path node="SW1"/>
+         <path node="ES#SW1.0"/>
+      </target>
+      <target name="ES#SW1.1">
+         <path node="SW1"/>
+         <path node="ES#SW1.1"/>
+      </target>
+      <target name="ES#SW1.2">
+         <path node="SW1"/>
+         <path node="ES#SW1.2"/>
+      </target>
+      <target name="ES#SW1.4">
+         <path node="SW1"/>
+         <path node="ES#SW1.4"/>
+      </target>
+      <target name="ES#SW2.0">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.0"/>
+      </target>
+      <target name="ES#SW2.1">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.1"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="Flow10" period="1" priority="Low" source="ES#SW1.4">
+      <target name="ES#SW1.0">
+         <path node="SW1"/>
+         <path node="ES#SW1.0"/>
+      </target>
+      <target name="ES#SW1.1">
+         <path node="SW1"/>
+         <path node="ES#SW1.1"/>
+      </target>
+      <target name="ES#SW1.2">
+         <path node="SW1"/>
+         <path node="ES#SW1.2"/>
+      </target>
+      <target name="ES#SW1.3">
+         <path node="SW1"/>
+         <path node="ES#SW1.3"/>
+      </target>
+      <target name="ES#SW2.0">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.0"/>
+      </target>
+      <target name="ES#SW2.1">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.1"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW1"/>
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="Flow11" period="1" priority="Low" source="ES#SW2.0">
+      <target name="ES#SW1.0">
+         <path node="SW2"/>
+         <path node="SW1"/>
+         <path node="ES#SW1.0"/>
+      </target>
+      <target name="ES#SW1.1">
+         <path node="SW2"/>
+         <path node="SW1"/>
+         <path node="ES#SW1.1"/>
+      </target>
+      <target name="ES#SW1.2">
+         <path node="SW2"/>
+         <path node="SW1"/>
+         <path node="ES#SW1.2"/>
+      </target>
+      <target name="ES#SW1.3">
+         <path node="SW2"/>
+         <path node="SW1"/>
+         <path node="ES#SW1.3"/>
+      </target>
+      <target name="ES#SW1.4">
+         <path node="SW2"/>
+         <path node="SW1"/>
+         <path node="ES#SW1.4"/>
+      </target>
+      <target name="ES#SW2.1">
+         <path node="SW2"/>
+         <path node="ES#SW2.1"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="Flow12" period="1" priority="Low" source="ES#SW2.1">
+      <target name="ES#SW1.0">
+         <path node="SW2"/>
+         <path node="SW1"/>
+         <path node="ES#SW1.0"/>
+      </target>
+      <target name="ES#SW1.1">
+         <path node="SW2"/>
+         <path node="SW1"/>
+         <path node="ES#SW1.1"/>
+      </target>
+      <target name="ES#SW1.2">
+         <path node="SW2"/>
+         <path node="SW1"/>
+         <path node="ES#SW1.2"/>
+      </target>
+      <target name="ES#SW1.3">
+         <path node="SW2"/>
+         <path node="SW1"/>
+         <path node="ES#SW1.3"/>
+      </target>
+      <target name="ES#SW1.4">
+         <path node="SW2"/>
+         <path node="SW1"/>
+         <path node="ES#SW1.4"/>
+      </target>
+      <target name="ES#SW2.0">
+         <path node="SW2"/>
+         <path node="ES#SW2.0"/>
+      </target>
+      <target name="ES#SW2.2">
+         <path node="SW2"/>
+         <path node="ES#SW2.2"/>
+      </target>
+      <target name="ES#SW2.3">
+         <path node="SW2"/>
+         <path node="ES#SW2.3"/>
+      </target>
+      <target name="ES#SW2.4">
+         <path node="SW2"/>
+         <path node="ES#SW2.4"/>
+      </target>
+   </flow>
+</elements>

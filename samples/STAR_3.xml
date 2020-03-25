@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+   <network name="STAR_3" overhead="67" shortest-path-policy="DIJKSTRA" technology="AFDX" transmission-capacity="100000000" x-type="FULL"/>
+   <station name="A" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100000000" x="64.0" y="41.0"/>
+   <station name="B" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100000000" x="352.0" y="41.0"/>
+   <station name="C" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100000000" x="208.0" y="240.0"/>
+   <switch name="AFDX Switch 1" transmission-capacity="100000000" service-policy="FIRST_IN_FIRST_OUT" tech-latency="0" switching-technique="CUT_THROUGH" x="208" y="112"/>
+   <link from="A" fromPort="0" name="AFDX Edge 1" to="AFDX Switch 1" toPort="0" transmission-capacity="100000000"/>
+   <link from="B" fromPort="0" name="AFDX Edge 2" to="AFDX Switch 1" toPort="1" transmission-capacity="100000000"/>
+   <link from="C" fromPort="0" name="AFDX Edge 3" to="AFDX Switch 1" toPort="2" transmission-capacity="100000000"/>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="AFDX Flow 1" period="1" priority="Low" source="A">
+      <target mode="M" name="B">
+         <path node="AFDX Switch 1"/>
+         <path node="B"/>
+      </target>
+      <target mode="M" name="C">
+         <path node="AFDX Switch 1"/>
+         <path node="C"/>
+      </target>
+   </flow>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="AFDX Flow 2" period="1" priority="Low" source="B">
+      <target mode="M" name="A">
+         <path node="AFDX Switch 1"/>
+         <path node="A"/>
+      </target>
+      <target mode="M" name="C">
+         <path node="AFDX Switch 1"/>
+         <path node="C"/>
+      </target>
+   </flow>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="AFDX Flow 3" period="1" priority="Low" source="C">
+      <target mode="M" name="A">
+         <path node="AFDX Switch 1"/>
+         <path node="A"/>
+      </target>
+      <target mode="M" name="B">
+         <path node="AFDX Switch 1"/>
+         <path node="B"/>
+      </target>
+   </flow>
+</elements>

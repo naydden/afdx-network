@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+   <network name="ESE_F3" overhead="67" shortest-path-policy="DIJKSTRA" technology="AFDX" transmission-capacity="100Mbps" x-type="FULL"/>
+   <station name="AFDX Station 5" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="80.0" y="80.0"/>
+   <station name="AFDX Station 6" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100Mbps" x="400.0" y="80.0"/>
+   <switch name="AFDX Switch 1" service-policy="FIRST_IN_FIRST_OUT" switching-technique="CUT_THROUGH" tech-latency="0" transmission-capacity="100Mbps" x="240.0" y="80.0"/>
+   <link from="AFDX Station 5" fromPort="0" name="AFDX Edge 3" to="AFDX Switch 1" toPort="0" transmission-capacity="100Mbps"/>
+   <link from="AFDX Switch 1" fromPort="1" name="AFDX Edge 4" to="AFDX Station 6" toPort="0" transmission-capacity="100Mbps"/>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="AFDX Flow 1" period="1" priority="Low" source="AFDX Station 5">
+      <target name="AFDX Station 6">
+         <path node="AFDX Switch 1"/>
+         <path node="AFDX Station 6"/>
+      </target>
+   </flow>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="AFDX Flow 2" period="1" priority="Low" source="AFDX Station 5">
+      <target name="AFDX Station 6">
+         <path node="AFDX Switch 1"/>
+         <path node="AFDX Station 6"/>
+      </target>
+   </flow>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="AFDX Flow 3" period="1" priority="Low" source="AFDX Station 5">
+      <target name="AFDX Station 6">
+         <path node="AFDX Switch 1"/>
+         <path node="AFDX Station 6"/>
+      </target>
+   </flow>
+</elements>

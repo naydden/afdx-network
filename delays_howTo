@@ -1,0 +1,21 @@
+Architecture pour le calcul des délais.
+
+INITIALISATIONS:
+
+- à chaque switch je lui assigne tous les liens. (dans mon architecture, chaque lien a associé précédemment les flux direct et reverse qui passent à travers de lui)
+
+- j'initialise une courbe d'arrivée pour chaque path de chaque target de chaque flux. Au début ma courbe d'arrivée est la même pour tous les paths. Elle va se stabiliser dans la boucle suivante:
+
+BOUCLAGE:
+
+- pour chaque switch:
+	- pour chaque lien, je prends tous les flux sortants du switch.
+		- j'obtiens la courbe d'arrivée à l'entrée du switch, en sommant les courbes d'arrivée au switch de chacun des flux sortant par le lien que je suis en train de regarder. Comme ça j'obtiens le délai introduit par le switch pour ce *lien*.
+			- IMPORTANT: puisqu'un flux a plusieurs targets, je suis obligé à parcourir chaque target et voir si la destination de mon lien de sortie est dans les paths de ce target. S'il est là ça veut dire que je dois prendre en compte ce target pour modifier ma courbe d'arriver au switch. S'il y a plusieurs targets qui ont un path égale à la destination du lien à la sortie, je ne prends qu'un de ces targets pour comptabiliser correctement ma courbe d'arrivée au switch. Ceci est dû au fait qu'un flux avec plusieurs targets qui arrivent dans un switch qui n'est pas un switch de "division" des targets, en fait c'est comme s'il ne passe qu'un message.
+		- Ensuite, je mets à jour la courbe d'arrivée à la sortie du switch pour chacun des flows, avec le délai du lien que je viens d'obtenir.
+			- Ici aussi je dois vérifier et mettre à jour la courbe d'arrivée que des ces targets qui sortent par le lien que je regarde.
+
+
+Je répète ce processus plusieurs fois jusuqu'à mes courbes d'arrivée ne varient plus entre une itération et l'autre. Ça veut dire que tous les délais ont été bien caclulés.
+
+Conclusion importante: Dans mon architecture, un switch à une courbe d'arrivée par lien de sortie.

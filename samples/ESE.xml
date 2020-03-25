@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+   <network name="ESE" overhead="67" shortest-path-policy="DIJKSTRA" technology="AFDX" transmission-capacity="100000000" x-type="FULL"/>
+   <station name="AFDX Station 5" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100000000" x="78.0" y="51.0"/>
+   <station name="AFDX Station 6" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100000000" x="392.0" y="52.0"/>
+   <switch name="AFDX Switch 1" transmission-capacity="100000000" service-policy="FIRST_IN_FIRST_OUT" tech-latency="0" switching-technique="CUT_THROUGH" x="216" y="66"/>
+   <link from="AFDX Station 5" fromPort="0" name="AFDX Edge 3" to="AFDX Switch 1" toPort="0" transmission-capacity="100000000"/>
+   <link from="AFDX Switch 1" fromPort="1" name="AFDX Edge 4" to="AFDX Station 6" toPort="0" transmission-capacity="100000000"/>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="AFDX Flow 1" period="1" priority="Low" source="AFDX Station 5">
+      <target mode="M" name="AFDX Station 6">
+         <path node="AFDX Switch 1"/>
+         <path node="AFDX Station 6"/>
+      </target>
+   </flow>
+</elements>

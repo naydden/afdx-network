@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<results>
+  <delays>
+    <flow name="Flow4">
+      <target name="ES#SW2.0" value="1389" />
+      <target name="ES#SW2.2" value="1389" />
+      <target name="ES#SW2.4" value="1389" />
+      <target name="ES#SW2.1" value="1389" />
+      <target name="ES#SW2.3" value="1389" />
+    </flow>
+    <flow name="Flow1">
+      <target name="ES#SW2.0" value="1373" />
+      <target name="ES#SW2.2" value="1373" />
+      <target name="ES#SW2.4" value="1373" />
+      <target name="ES#SW2.1" value="1373" />
+      <target name="ES#SW2.3" value="1373" />
+    </flow>
+    <flow name="Flow2">
+      <target name="ES#SW2.0" value="1377" />
+      <target name="ES#SW2.2" value="1377" />
+      <target name="ES#SW2.4" value="1377" />
+      <target name="ES#SW2.1" value="1377" />
+      <target name="ES#SW2.3" value="1377" />
+    </flow>
+    <flow name="Flow5">
+      <target name="ES#SW2.0" value="1393" />
+      <target name="ES#SW2.2" value="1393" />
+      <target name="ES#SW2.4" value="1393" />
+      <target name="ES#SW2.1" value="1393" />
+      <target name="ES#SW2.3" value="1393" />
+    </flow>
+    <flow name="Flow3">
+      <target name="ES#SW2.0" value="1381" />
+      <target name="ES#SW2.2" value="1381" />
+      <target name="ES#SW2.4" value="1381" />
+      <target name="ES#SW2.1" value="1381" />
+      <target name="ES#SW2.3" value="1381" />
+    </flow>
+  </delays>
+  <jitters>
+    <flow name="Flow4">
+      <target name="ES#SW2.0" value="0" />
+      <target name="ES#SW2.2" value="0" />
+      <target name="ES#SW2.4" value="0" />
+      <target name="ES#SW2.1" value="0" />
+      <target name="ES#SW2.3" value="0" />
+    </flow>
+    <flow name="Flow1">
+      <target name="ES#SW2.0" value="0" />
+      <target name="ES#SW2.2" value="0" />
+      <target name="ES#SW2.4" value="0" />
+      <target name="ES#SW2.1" value="0" />
+      <target name="ES#SW2.3" value="0" />
+    </flow>
+    <flow name="Flow2">
+      <target name="ES#SW2.0" value="0" />
+      <target name="ES#SW2.2" value="0" />
+      <target name="ES#SW2.4" value="0" />
+      <target name="ES#SW2.1" value="0" />
+      <target name="ES#SW2.3" value="0" />
+    </flow>
+    <flow name="Flow5">
+      <target name="ES#SW2.0" value="0" />
+      <target name="ES#SW2.2" value="0" />
+      <target name="ES#SW2.4" value="0" />
+      <target name="ES#SW2.1" value="0" />
+      <target name="ES#SW2.3" value="0" />
+    </flow>
+    <flow name="Flow3">
+      <target name="ES#SW2.0" value="0" />
+      <target name="ES#SW2.2" value="0" />
+      <target name="ES#SW2.4" value="0" />
+      <target name="ES#SW2.1" value="0" />
+      <target name="ES#SW2.3" value="0" />
+    </flow>
+  </jitters>
+  <backlogs>
+    <switch name="SW2">
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <total backlog="0" buffer="0" percent="0" />
+    </switch>
+    <switch name="SW1">
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <port backlog="0" delay="0" num="0" />
+      <total backlog="0" buffer="0" percent="0" />
+    </switch>
+  </backlogs>
+  <load>
+    <edge name="Edge7">
+      <usage percent="0.0%" type="direct" value="0.0000e+00" />
+      <usage percent="47.5%" type="reverse" value="4.7480e+07" />
+    </edge>
+    <edge name="Edge8">
+      <usage percent="0.0%" type="direct" value="0.0000e+00" />
+      <usage percent="47.5%" type="reverse" value="4.7480e+07" />
+    </edge>
+    <edge name="Edge10">
+      <usage percent="0.0%" type="direct" value="0.0000e+00" />
+      <usage percent="47.5%" type="reverse" value="4.7480e+07" />
+    </edge>
+    <edge name="Edge6">
+      <usage percent="0.0%" type="direct" value="0.0000e+00" />
+      <usage percent="47.5%" type="reverse" value="4.7480e+07" />
+    </edge>
+    <edge name="Edge2">
+      <usage percent="8.9%" type="direct" value="8.9360e+06" />
+      <usage percent="0.0%" type="reverse" value="0.0000e+00" />
+    </edge>
+    <edge name="Edge4">
+      <usage percent="10.1%" type="direct" value="1.0136e+07" />
+      <usage percent="0.0%" type="reverse" value="0.0000e+00" />
+    </edge>
+    <edge name="Edge11">
+      <usage percent="47.5%" type="direct" value="4.7480e+07" />
+      <usage percent="0.0%" type="reverse" value="0.0000e+00" />
+    </edge>
+    <edge name="Edge3">
+      <usage percent="9.3%" type="direct" value="9.3360e+06" />
+      <usage percent="0.0%" type="reverse" value="0.0000e+00" />
+    </edge>
+    <edge name="Edge9">
+      <usage percent="0.0%" type="direct" value="0.0000e+00" />
+      <usage percent="47.5%" type="reverse" value="4.7480e+07" />
+    </edge>
+    <edge name="Edge5">
+      <usage percent="10.5%" type="direct" value="1.0536e+07" />
+      <usage percent="0.0%" type="reverse" value="0.0000e+00" />
+    </edge>
+    <edge name="Edge1">
+      <usage percent="8.5%" type="direct" value="8.5360e+06" />
+      <usage percent="0.0%" type="reverse" value="0.0000e+00" />
+    </edge>
+  </load>
+</results>

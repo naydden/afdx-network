@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+   <network name="ES2E_M" overhead="67" shortest-path-policy="DIJKSTRA" technology="AFDX" transmission-capacity="100000000" x-type="FULL"/>
+   <station name="Source" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100000000" x="80.0" y="80.0"/>
+   <station name="Dest1" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100000000" x="400.0" y="16.0"/>
+   <station name="Dest2" service-policy="FIRST_IN_FIRST_OUT" transmission-capacity="100000000" x="400.0" y="112.0"/>
+   <switch name="Switch" transmission-capacity="100000000" service-policy="FIRST_IN_FIRST_OUT" tech-latency="0" switching-technique="CUT_THROUGH" x="240" y="80"/>
+   <link from="Source" fromPort="0" name="AFDX Edge 1" to="Switch" toPort="0" transmission-capacity="100000000"/>
+   <link from="Switch" fromPort="1" name="AFDX Edge 2" to="Dest1" toPort="0" transmission-capacity="100000000"/>
+   <link from="Switch" fromPort="2" name="AFDX Edge 3" to="Dest2" toPort="0" transmission-capacity="100000000"/>
+   <flow deadline="1" jitter="0" max-payload="1000" min-payload="1000" name="AFDX Flow 1" period="1" priority="Low" source="Source">
+      <target mode="M" name="Dest1">
+         <path node="Switch"/>
+         <path node="Dest1"/>
+      </target>
+      <target mode="M" name="Dest2">
+         <path node="Switch"/>
+         <path node="Dest2"/>
+      </target>
+   </flow>
+</elements>
